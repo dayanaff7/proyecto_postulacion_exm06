@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Publications" %>
+
+<h1>Publications</h1>
+<div class="container  text-end p-3">
+<% unless current_user.role == "normal_user" %>
+  <div class="container text-end">
+    <%= link_to "Nueva Publicacion", new_publication_path, class: "btn btn-dark" %>
+  </div>
+<% end %>
+</div>
+<div id="publications" class="container">
+  <div class="row">
+    <% @publications.each do |publication| %>
+      <div class="col-md-4 mb-4"> <!-- Cambia el tamaño de la columna según sea necesario -->
+        <div class="card" style="width: 18rem;">
+          <%= image_tag "jobs.jpg", class: "card-img-top", alt: "Descripción de la imagen" %>
+          <div class="card-body">
+            <%= render publication %>
+            <%= link_to "Mostrar", publication, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to "New publication", new_publication_path %>

@@ -1,0 +1,31 @@
+
+<div class="card mb-3">
+  <div class="container">
+    <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+        <%= link_to image_tag('carrousel2.jpeg', alt: 'img1',  class: 'img-class'), root_path %>
+        </div>
+        <div class="carousel-item">
+        <%= link_to image_tag('carrousel1.jpeg', alt: 'img2',  class: 'img-class'), root_path %>
+        </div>
+        <div class="carousel-item">
+        <%= link_to image_tag('carrousel3.jpeg', alt: 'img3',  class: 'img-class'), root_path %>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+</div>
+  <div class="card-body">
+    <h5 class="card-title">Portal de Postulaciones</h5>
+    <p class="card-text">Bienvenidos al buscador de nuevos desafios dentro de nuestra organización</p>
+    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+  </div>
+</div>

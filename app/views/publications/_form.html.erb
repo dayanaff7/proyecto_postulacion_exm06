@@ -1,0 +1,27 @@
+<%= form_with(model: publication) do |form| %>
+  <% if publication.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+
+      <ul>
+        <% publication.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.label :cargo, "Cargo", class: "form-label" %>
+    <%= form.text_field :cargo, class: "form-control", id: "exampleFormControlInput1", placeholder: "Ingresa el cargo" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :description, "Descripción", class: "form-label" %>
+    <%= form.text_area :description, class: "form-control", id: "descriptionTextarea", rows: 5, placeholder: "Ingresa la descripción de cargo" %>
+ </div>
+
+  <div>
+    <%= form.submit "Crear Publicación", class: "btn btn-dark" %>
+  </div>
+<% end %>

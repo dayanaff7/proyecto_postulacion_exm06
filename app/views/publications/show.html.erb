@@ -1,0 +1,48 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @publication %>
+
+<% unless current_user.role == "normal_user" %>
+  <div class="containner">
+  <h5>Postulantes</h5>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre del Postulante</th>
+        <th>Email</th>
+        <th>Fecha de Postulación</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @applicants.each do |applicant| %>
+        <tr>
+          <td><%= applicant.name %></td>
+          <td><%= applicant.email %></td>
+          <td><%= applicant.created_at.strftime("%d/%m/%Y") %></td> <!-- Esto puede requerir ajustes -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  </div>
+<% end %>
+    <div class="container p-3">
+      <% unless current_user.role == "normal_user" %>
+        <div class="row">
+           <div class="col-6"><%= link_to "Editar", edit_publication_path(@publication), class: "btn btn-info"  %> </div>
+           <div class="col-6"><%= button_to "Eliminar", @publication, method: :delete, class: "btn btn-danger" %></div>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+           <div class="col-4"></div>
+           <div class="col-4"></div>
+           <div class="col-4"><%= link_to "Volver", publications_path,class: "btn btn-info"  %></div>
+    </div>
+  
+  <% unless current_user.role == "admin" %>
+   <% unless current_user.publications.include?(@publication) %>
+      <%= button_to "Postular a esta publicación", apply_publication_path(@publication), method: :post, class: "btn btn-success" %>
+   <% end %>
+  <% end %>
+</div>
