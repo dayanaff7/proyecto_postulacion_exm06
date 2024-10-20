@@ -6,7 +6,7 @@ databases:
 
 services:
   - type: web
-    name: examen_06
+    name: examen_m06
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
