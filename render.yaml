@@ -2,14 +2,15 @@ databases:
   - name: miproyecto
     databaseName: miproyecto
     user: miproyecto
-    plan: free      # Cambiado a plan profesional
+    plan: free
 
 services:
   - type: web
     name: miproyecto
     runtime: ruby
-    plan: free   # Cambiado a plan profesional
+    plan: free
     buildCommand: "./bin/render-build.sh"
+    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
