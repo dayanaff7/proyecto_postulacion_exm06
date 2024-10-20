@@ -1,21 +1,21 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
-    plan: free
+  - name: examen_m06
+    databaseName: examen_m06
+    user: examen_m06
+    plan: professional  # Cambiado a plan profesional
 
 services:
   - type: web
     name: examen_m06
     runtime: ruby
-    plan: free
+    plan: professional  # Cambiado a plan profesional
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    preDeployCommand: "bundle exec rails db:migrate" # Ahora puedes habilitar esto en un plan profesional
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: examen_m06
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
