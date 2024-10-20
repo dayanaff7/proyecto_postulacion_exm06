@@ -2,13 +2,13 @@ databases:
   - name: examen_m06
     databaseName: examen_m06
     user: examen_m06
-    plan: micro      # Cambiado a plan profesional
+    plan: basic-256mb      # Cambiado a plan profesional
 
 services:
   - type: web
     name: examen_m06
     runtime: ruby
-    plan: micro    # Cambiado a plan profesional
+    plan: basic-256mb    # Cambiado a plan profesional
     buildCommand: "./bin/render-build.sh"
     preDeployCommand: "bundle exec rails db:migrate" # Ahora puedes habilitar esto en un plan profesional
     startCommand: "bundle exec rails server"
