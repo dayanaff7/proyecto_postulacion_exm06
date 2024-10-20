@@ -81,5 +81,5 @@ development:
 production:
   <<: *default
   database: mysite_9afn
-  username: examen_m06
+  username: miproyecto
   password: <%= ENV["EXAMEN_M06_DATABASE_PASSWORD"] %>
