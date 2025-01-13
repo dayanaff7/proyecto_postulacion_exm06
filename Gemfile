@@ -59,7 +59,7 @@ group :test do
 end
 
 gem "devise", "~> 4.9"
-gem 'carrierwave', '~> 3.0', '>= 3.0.7'
+gem 'carrierwave', '~> 3.1'
 gem 'fog-aws'
 gem 'fiddle'
 gem 'aws-sdk-s3', '~> 1.169'
