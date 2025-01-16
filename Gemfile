@@ -62,4 +62,4 @@ gem "devise", "~> 4.9"
 gem 'carrierwave', '~> 3.0', '>= 3.0.7'
 gem 'fog-aws'
 gem 'fiddle'
-gem 'aws-sdk-s3', '~> 1.169'
+gem 'aws-sdk-s3', '~> 1.178'
